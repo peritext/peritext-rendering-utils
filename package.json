@@ -1,6 +1,6 @@
 {
   "name": "peritext-rendering-utils",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Helpers for peritext renderers and applications",
   "main": "dist/index.js",
   "scripts": {

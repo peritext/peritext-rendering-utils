@@ -41,7 +41,7 @@ export default function buildContextContent(story, contextualizationId, padding 
   // search in notes
   else {
     Object.keys(section.notes).some(noteId => {
-      const noteContents = section.notes[noteId].editorState;
+      const noteContents = section.notes[noteId].contents;
       entityId = findRelatedEntity(noteContents, contextualizationId);
       if (entityId) {
         targetContents = noteId;
@@ -50,7 +50,7 @@ export default function buildContextContent(story, contextualizationId, padding 
     })
   }
   let contents = targetContents === 'main' ? 
-    {...section.contents} : {...section.notes[targetContents].editorState};
+    {...section.contents} : {...section.notes[targetContents].contents};
 
   if (entityId) {
     let blockIndex;

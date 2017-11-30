@@ -61,7 +61,7 @@ function buildContextContent(story, contextualizationId) {
   // search in notes
   else {
       (0, _keys2.default)(section.notes).some(function (noteId) {
-        var noteContents = section.notes[noteId].editorState;
+        var noteContents = section.notes[noteId].contents;
         entityId = findRelatedEntity(noteContents, contextualizationId);
         if (entityId) {
           targetContents = noteId;
@@ -69,7 +69,7 @@ function buildContextContent(story, contextualizationId) {
         }
       });
     }
-  var contents = targetContents === 'main' ? (0, _extends3.default)({}, section.contents) : (0, _extends3.default)({}, section.notes[targetContents].editorState);
+  var contents = targetContents === 'main' ? (0, _extends3.default)({}, section.contents) : (0, _extends3.default)({}, section.notes[targetContents].contents);
 
   if (entityId) {
     var blockIndex = void 0;
